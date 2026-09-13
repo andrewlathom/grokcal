@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grok Cal</title>
+<style>
+  :root { --bg:#0a0a0a; --card:#141414; --accent:#e8e8e8; --muted:#666; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--accent); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; min-height:100vh; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid #222; }
+  .logo { font-size:20px; font-weight:700; letter-spacing:-0.5px; }
+  .logo span { color:var(--muted); font-weight:400; }
+  .voice-btn { background:var(--accent); color:#000; border:none; border-radius:50%; width:44px; height:44px; font-size:18px; cursor:pointer; }
+  main { padding:20px; max-width:720px; margin:0 auto; }
+  .today { font-size:28px; font-weight:600; margin-bottom:4px; }
+  .sub { color:var(--muted); font-size:14px; margin-bottom:24px; }
+  .event { background:var(--card); border-radius:12px; padding:16px; margin-bottom:12px; border:1px solid #222; }
+  .event .t { font-size:16px; font-weight:600; }
+  .event .d { color:var(--muted); font-size:13px; margin-top:4px; }
+  .empty { color:var(--muted); text-align:center; padding:60px 20px; }
+  @media (min-width:768px) { .today { font-size:36px; } main { padding:40px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Grok<span>Cal</span></div>
+  <button class="voice-btn" aria-label="Voice">🎤</button>
+</header>
+<main>
+  <div class="today">Saturday, Sep 12</div>
+  <div class="sub">Beta skeleton · voice edit coming</div>
+  <div class="event">
+    <div class="t">SC vs Georgia — Williams-Brice</div>
+    <div class="d">Nov 21 · Columbia, SC · Flex window</div>
+  </div>
+  <div class="event">
+    <div class="t">Thaïs — Austin Opera</div>
+    <div class="d">Nov 13 · Long Center · conflicts with Columbia</div>
+  </div>
+  <div class="empty">More events load from Google Calendar sync.</div>
+</main>
+<script>
+  // Voice stub — next commit wires to Grok speech
+  document.querySelector('.voice-btn').addEventListener('click', () => {
+    alert('Voice edit: coming in beta 2. Say "Add event" and Grok parses it.');
+  });
+</script>
+</body>
+</html>
